@@ -6,17 +6,17 @@ TextSCF is a comprehensive library designed for weakly supervised image alignmen
 
 ## Updates
 
-🔥[11/30/2023] - We collect a list of papers exploring the use of LLMs in AI for medicine and healthcare. ([Awesome-Medical-LLMs](docs/Awesome-Medical-LLMs.md))
+🔥[11/30/2023] - We collect a list of papers exploring the use of LLMs in AI for medicine and healthcare. ([Awesome-Medical-LLMs](docs/Awesome-Medical-LLMs.md)) <br>
 🔥[11/30/2023] - We collect a list of papers centered on Image Registration Models in Healthcare. ([Awesome-Medical-Image-Registration](docs/Awesome-Medical-Image-Registration.md))
 
 ## Papers
 
-**[Spatially Covariant Image Registration with Text Prompts](https://arxiv.org/abs/2311.15607)**
-[Hang Zhang](https://tinymilky.com), Xiang Chen, Rongguang Wang, Renjiu Hu, [Dongdong Liu](https://ddliu365.github.io/), and [Gaolei Li](https://icst.sjtu.edu.cn/DirectoryDetail.aspx?id=28).
-arXiv 2023.
+**[Spatially Covariant Image Registration with Text Prompts](https://arxiv.org/abs/2311.15607)** <br>
+[Hang Zhang](https://tinymilky.com), Xiang Chen, Rongguang Wang, Renjiu Hu, [Dongdong Liu](https://ddliu365.github.io/), and [Gaolei Li](https://icst.sjtu.edu.cn/DirectoryDetail.aspx?id=28). <br>
+arXiv 2023. 
 
-**[Spatially Covariant Lesion Segmentation](https://www.ijcai.org/proceedings/2023/0190)**
-[Hang Zhang](https://tinymilky.com), Rongguang Wang, Jinwei Zhang, [Dongdong Liu](https://ddliu365.github.io/), Chao Li, and Jiahao Li.
+**[Spatially Covariant Lesion Segmentation](https://www.ijcai.org/proceedings/2023/0190)**  <br>
+[Hang Zhang](https://tinymilky.com), Rongguang Wang, Jinwei Zhang, [Dongdong Liu](https://ddliu365.github.io/), Chao Li, and Jiahao Li.  <br>
 IJCAI 2023.
 
 ## Todo
