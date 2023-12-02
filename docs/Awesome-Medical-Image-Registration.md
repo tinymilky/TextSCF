@@ -99,7 +99,7 @@ This repository features a curated selection of research papers centered on Imag
 
 ### Traditional Registration Tools
 |Name|Methods|
-|---|---|---|
+|---|---|
 |[ANTspy](https://github.com/ANTsX/ANTsPy)|SyN|
 |[SimpleElastix](https://simpleelastix.github.io/)|B-spline|
 |[SimpleITK](https://simpleitk.org/)|Demons|
