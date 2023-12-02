@@ -96,3 +96,10 @@ This repository features a curated selection of research papers centered on Imag
 |2020|[Unsupervised Multi-Modal Image Registration via Geometry Preserving Image-to-Image Translation](https://openaccess.thecvf.com/content_CVPR_2020/html/Arar_Unsupervised_Multi-Modal_Image_Registration_via_Geometry_Preserving_Image-to-Image_Translation_CVPR_2020_paper.html)|CVPR|
 |2019|[A Deep Step Pattern Representation for Multimodal Retinal Image Registration](https://ieeexplore.ieee.org/document/9008309)|ICCV|
 |2019|[Networks for Joint Affine and Non-Parametric Image Registration](https://openaccess.thecvf.com/content_CVPR_2019/html/Shen_Networks_for_Joint_Affine_and_Non-Parametric_Image_Registration_CVPR_2019_paper.html)|CVPR|
+
+### Traditional Registration Tools
+|Name|Methods|
+|---|---|---|
+|[ANTspy](https://github.com/ANTsX/ANTsPy)|SyN|
+|[SimpleElastix](https://simpleelastix.github.io/)|B-spline|
+|[SimpleITK](https://simpleitk.org/)|Demons|
