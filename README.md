@@ -12,7 +12,7 @@ TextSCF is a comprehensive library designed for weakly supervised image alignmen
 ## Papers
 
 **[Spatially Covariant Image Registration with Text Prompts](https://arxiv.org/abs/2311.15607)** <br>
-[Hang Zhang](https://tinymilky.com), Xiang Chen, Rongguang Wang, Renjiu Hu, [Dongdong Liu](https://ddliu365.github.io/), and [Gaolei Li](https://icst.sjtu.edu.cn/DirectoryDetail.aspx?id=28). <br>
+[Hang Zhang](https://tinymilky.com), [Xiang Chen](https://grzy.hnu.edu.cn/site/index/chenxiang), Rongguang Wang, Renjiu Hu, [Dongdong Liu](https://ddliu365.github.io/), and [Gaolei Li](https://icst.sjtu.edu.cn/DirectoryDetail.aspx?id=28). <br>
 arXiv 2023. 
 
 **[Spatially Covariant Lesion Segmentation](https://www.ijcai.org/proceedings/2023/0190)**  <br>
