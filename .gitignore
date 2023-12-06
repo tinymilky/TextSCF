@@ -1,0 +1,17 @@
+**__pycache__**
+**logs**
+**.pyc**
+**results**
+**datasets**
+**data**
+**playground**
+*.nii
+*.npz
+*.nii.gz
+*.json
+*.sh
+*.pdf
+**.csv**
+**.vscode**
+**egg-info**
+*.DS_Store
