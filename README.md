@@ -2,7 +2,8 @@
 
 ![Pytorch](https://img.shields.io/badge/Implemented%20in-Pytorch-red.svg) <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg"></a> [![arXiv](https://img.shields.io/badge/arXiv-2111.10480-b31b1b.svg)](https://arxiv.org/abs/2311.15607)
 
-TextSCF is a comprehensive library designed for weakly supervised image alignment and registration, providing extensive utilities for detailed deformation field analysis.
+This repository hosts the official PyTorch implementation of "Spatially Covariant Image Registration with Text Prompts". TextSCF is a comprehensive library focused on weakly supervised image alignment and registration, equipped with a wide range of tools for in-depth analysis of deformation fields.
+
 
 ## Updates
 
@@ -100,3 +101,8 @@ If our work has influenced or contributed to your research, please kindly acknow
 
 ```
 ## Acknowledgment
+
+We extend our gratitude to [LKU-Net](https://github.com/xi-jia/LKU-Net), [LapRIN](https://github.com/cwmok/LapIRN), [VoxelMorph](https://github.com/voxelmorph/voxelmorph), and [TransMorph](https://github.com/junyuchen245/TransMorph_Transformer_for_Medical_Image_Registration) for their valuable contributions. Portions of the code in this repository have been adapted from these sources.
+
+###### Keywords
+Keywords: Diffeomorphic image registration, large deformation, Convolutional neural networks, Vision transformers, Large-scale visual language models, Spatially covariant filters, Text prompts
