@@ -16,6 +16,15 @@ Inspired by [TransMorph](https://github.com/junyuchen245/TransMorph_Transformer_
 python train_brainreg.py -d oasis_pkl -m brainTextSCFComplex -bs 1 --epochs 501 --reg_w 0.1 start_channel=64 scp_dim=2048 diff_int=0 clip_backbone=vit
 ```
 
+To use the pretrained mode, download the [complete project setup](https://www.dropbox.com/scl/fo/ve4wancuxty69kulxmn10/h?rlkey=kygv9b16p70fh3gocj6c6l8l0&dl=0), run the script with the following command in folder `./src` to get the npz files:
+```
+python test_brainreg.py -d oasis_pkl -m brainTextSCFComplex -bs 1 --is_submit 1 --load_ckpt ./../../../checkpoint/oasis_9002_64_2048_0_vit.pth start_channel=64 scp_dim=2048 diff_int=0 clip_backbone=vit
+```
+- `--is_submit`: Whether to create npz files for submission to the challenge.
+- `--load_ckpt`: The type of the checkpoint to load, 'last' is from the latest checkpoint, 'best' is from the checkpoint with highest validation score, and a path such as './../../../checkpoint/oasis_9002_64_2048_0_vit.pth' directing to the checkpoint.
+
+The npz files will be saved at `./textSCF/src/logs/oasis_pkl/brainTextSCFComplex/` where `textSCF` is the root of the code repository.
+
 ## Abdomen CT
 
 Todo
