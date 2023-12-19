@@ -7,7 +7,9 @@ This repository hosts the official PyTorch implementation of "Spatially Covarian
 
 ## Updates
 
-<img src="https://user-images.githubusercontent.com/74038190/216122041-518ac897-8d92-4c6b-9b3f-ca01dcaf38ee.png" width="20"> [12/06/2023] - The code for textSCF, reproducing our results for task 3 in [MICCAI 2021 Learn2Reg Challenge](https://learn2reg.grand-challenge.org/evaluation/task-3-validation/leaderboard/), is now available. See datasets and usage sections below.
+<img src="https://user-images.githubusercontent.com/74038190/216122041-518ac897-8d92-4c6b-9b3f-ca01dcaf38ee.png" width="20"> [12/18/2023] - A pretrained model weight for task 3 in [MICCAI 2021 Learn2Reg Challenge](https://learn2reg.grand-challenge.org/evaluation/task-3-validation/leaderboard/), is now available. Please see below
+
+<img src="https://user-images.githubusercontent.com/74038190/216122069-5b8169d7-1d8e-4a13-b245-a8e4176c99f8.png" width="18"> [12/06/2023] - The code for textSCF, reproducing our results for task 3 in [MICCAI 2021 Learn2Reg Challenge](https://learn2reg.grand-challenge.org/evaluation/task-3-validation/leaderboard/), is now available. See datasets and usage sections below.
 
 <img src="https://user-images.githubusercontent.com/74038190/216122069-5b8169d7-1d8e-4a13-b245-a8e4176c99f8.png" width="18"> [11/30/2023] - We collect a list of papers exploring the use of LLMs in AI for medicine and healthcare. ([Awesome-Medical-LLMs](docs/Awesome-Medical-LLMs.md)) <br>
 <img src="https://user-images.githubusercontent.com/74038190/216122069-5b8169d7-1d8e-4a13-b245-a8e4176c99f8.png" width="18"> [11/30/2023] - We collect a list of papers centered on image registration models in healthcare. ([Awesome-Medical-Image-Registration](docs/Awesome-Medical-Image-Registration.md))
@@ -44,7 +46,7 @@ IJCAI 2023.
 See [Datasets](docs/Datasets.md) for more details.
 
 ## Usage
-Run the script with the following command to reproduce the results:
+Run the script with the following command in folder `./src` to reproduce the results:
 ```
 python train_brainreg.py -d oasis_pkl -m brainTextSCFComplex -bs 1 --epochs 501 --reg_w 0.1 start_channel=64 scp_dim=2048 diff_int=0 clip_backbone=vit
 ```
@@ -61,12 +63,25 @@ python train_brainreg.py -d oasis_pkl -m brainTextSCFComplex -bs 1 --epochs 501 
 
 Please note that using a starting channel of 64 is computationally intensive. It is recommended to run this on an A100 GPU or higher for optimal performance. Alternatively, you can reduce the starting channel to as low as 8 for increased efficiency, while still achieving a Dice score of approximately 87.
 
+To use the pretrained mode, run the script with the following command in folder `./src` to get the npz files:
+```
+python test_brainreg.py -d oasis_pkl -m brainTextSCFComplex -bs 1 --is_submit 1 --load_ckpt ./../../../checkpoint/oasis_9002_64_2048_0_vit.pth start_channel=64 scp_dim=2048 diff_int=0 clip_backbone=vit
+```
+- `--is_submit`: Whether to create npz files for submission to the challenge.
+- `--load_ckpt`: The type of the checkpoint to load, 'last' is from the latest checkpoint, 'best' is from the checkpoint with highest validation score, and a path such as './../../../checkpoint/oasis_9002_64_2048_0_vit.pth' directing to the checkpoint.
+
+The npz files will be saved at `./textSCF/src/logs/oasis_pkl/brainTextSCFComplex/` where `textSCF` is the root of the code repository.
+
+See [Datasets](docs/Datasets.md) for obtaining pretrained models and to download a complete project setup.
+
 ## Todo
 - [x] Awesome-Medical-LLMs
 - [x] Awesome-Medical-Image-Registration
 - [x] Core code release
-- [ ] Pretrained model release
+- [x] Pretrained model release
 - [ ] Support of different backbones and datasets
+    - [ ] Support of backbones for including [LKU-Net](https://github.com/xi-jia/LKU-Net), [LapRIN](https://github.com/cwmok/LapIRN), [VoxelMorph](https://github.com/voxelmorph/voxelmorph), and [TransMorph](https://github.com/junyuchen245/TransMorph_Transformer_for_Medical_Image_Registration)
+    - [ ] Additional support of datasets including Abdomen CT, Cardiac Cine-MRI
 - [ ] Tutorials and periphery code
     - [ ] Smoothness and complexity analysis
     - [ ] Statistical analysis
@@ -100,6 +115,7 @@ If our work has influenced or contributed to your research, please kindly acknow
 }
 
 ```
+
 ## Acknowledgment
 
 We extend our gratitude to [LKU-Net](https://github.com/xi-jia/LKU-Net), [LapRIN](https://github.com/cwmok/LapIRN), [VoxelMorph](https://github.com/voxelmorph/voxelmorph), and [TransMorph](https://github.com/junyuchen245/TransMorph_Transformer_for_Medical_Image_Registration) for their valuable contributions. Portions of the code in this repository have been adapted from these sources.

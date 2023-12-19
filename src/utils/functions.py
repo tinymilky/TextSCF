@@ -17,12 +17,16 @@ class AverageMeter(object):
         self.avg = 0
         self.sum = 0
         self.count = 0
+        self.vals = []
+        self.std = 0
 
     def update(self, val, n=1):
         self.val = val
         self.sum += val * n
         self.count += n
         self.avg = self.sum / self.count
+        self.vals.append(val)
+        self.std = np.std(self.vals)
 
 class SpatialTransformer(nn.Module):
 
@@ -112,6 +116,30 @@ def dice_eval(y_pred, y_true, num_clus, exclude_background=True):
     if exclude_background:
         return torch.mean(torch.mean(dsc[:,1:], dim=1))
     return torch.mean(torch.mean(dsc, dim=1))
+
+def convert_pytorch_grid2scipy(grid):
+
+    _, H, W, D = grid.shape
+    grid_x = (grid[0, ...] + 1) * (D -1)/2
+    grid_y = (grid[1, ...] + 1) * (W -1)/2
+    grid_z = (grid[2, ...] + 1) * (H -1)/2
+
+    grid = np.stack([grid_z, grid_y, grid_x])
+
+    identity_grid = np.meshgrid(np.arange(H), np.arange(W), np.arange(D), indexing='ij')
+    grid = grid - identity_grid
+
+    return grid
+
+def dice_binary(pred, truth, k = 1):
+    truth[truth!=k]=0
+    pred[pred!=k]=0
+    truth=truth/k
+    pred=pred/k
+    intersection = np.sum(pred[truth==1.0]) * 2.0
+    dice = intersection / (np.sum(pred) + np.sum(truth)+1e-7)
+
+    return dice
 
 class modelSaver():
 

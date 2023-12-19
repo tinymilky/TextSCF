@@ -10,6 +10,8 @@ def getModel(opt):
 
     if 'brainTextSCFComplex' in model_name:
         model = brainTextSCFComplex(**nkwargs)
+    else:
+        raise ValueError("Model %s not recognized." % model_name)
 
     model = model.cuda()
 

@@ -269,12 +269,11 @@ class brainTextSCFComplex(nn.Module):
         if self.diff_int==1:
             preint_flow = flow_field / 2.
             flow_field = self.integrate(preint_flow) * 2.
-        else:
-            preint_flow = flow_field
-            flow_field = flow_field
 
         flow_field = torch.nn.functional.interpolate(flow_field, size=[160, 192, 224], mode='trilinear', align_corners=False)
         y_source = self.transformer(source, flow_field)
+        if self.diff_int==0:
+            preint_flow = flow_field
 
         if not registration:
             return (y_source, preint_flow), flow_field

@@ -115,8 +115,8 @@ if __name__ == '__main__':
         'img_size': (160, 192, 224), # input image size
         'loss_ws': [1., 0.1, 1.],    # sim, reg, dsc
         'logs_path': './logs',       # path to save logs
-        'save_freq': 4,              # save model every save_freq epochs
-        'n_checkpoints': 4,          # number of checkpoints to keep
+        'save_freq': 5,              # save model every save_freq epochs
+        'n_checkpoints': 20,          # number of checkpoints to keep
         'power': 0.9,                # decay power
         'num_workers': 4,            # number of workers for data loading
     }

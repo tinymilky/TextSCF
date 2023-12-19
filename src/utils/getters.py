@@ -158,12 +158,17 @@ def getTestModelWithCheckpoints(opt):
         which_model = str(epoch) + 'th'
     elif opt['load_ckpt'] == 'none':
         print("----->>>> No model is loaded")
+    elif os.path.exists(opt['load_ckpt']):
+        print("----->>>> Loading model from %s" % opt['load_ckpt'])
+        epoch, score = '-1', '-1'
+        states = convert_state_dict(torch.load(opt['load_ckpt']))
+        model.load_state_dict(states)
     else:
-        raise ValueError("Not either best, last or epoch")
+        raise ValueError("Not either best, last, epoch or none, or a valid path to a checkpoint")
 
     if file_name != 'unknown':
         print("----->>>> Resuming the %s model by loading epoch %s with dice %s" % (which_model, epoch, score))
-        states = convert_state_dict(torch.load(os.path.join(opt['log'], file_name)), is_multi=opt['use_multi_gpus'])
+        states = convert_state_dict(torch.load(os.path.join(opt['log'], file_name)))
         model.load_state_dict(states)
 
     info = {
