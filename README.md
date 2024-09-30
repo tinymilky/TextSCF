@@ -90,13 +90,12 @@ See [Datasets](docs/Datasets.md) for obtaining pretrained models and to download
 ## Citation
 If our work has influenced or contributed to your research, please kindly acknowledge it by citing:
 ```
-@misc{zhang2023spatially,
-      title={Spatially Covariant Image Registration with Text Prompts}, 
-      author={Hang Zhang and Xiang Chen and Rongguang Wang and Renjiu Hu and Dongdong Liu and Gaolei Li},
-      year={2023},
-      eprint={2311.15607},
-      archivePrefix={arXiv},
-      primaryClass={eess.IV}
+@article{chen2024spatially,
+  title={Spatially covariant image registration with text prompts},
+  author={Chen, Xiang and Liu, Min and Wang, Rongguang and Hu, Renjiu and Liu, Dongdong and Li, Gaolei and Wang, Yaonan and Zhang, Hang},
+  journal={IEEE Transactions on Neural Networks and Learning Systems},
+  year={2024},
+  publisher={IEEE}
 }
 
 @inproceedings{ijcai2023p0190,
